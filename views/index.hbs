@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in</title>
+</head>
+<body>
+    <form action="/auth/login" method="post">
+        <label for="username">Username: 
+            <input type="text" name="username" id="username" required>
+        </label> <br />
+        <label for="password">Password: 
+            <input type="password" name="password" id="password" required>
+        </label> <br />
+        <button type="submit">Log-in</button>
+    </form>
+    <p>No account yet? <a href="/register">Sign-up</a></p>
+
+    {{#if message}}
+        <h4>{{message}}</h4>
+    {{/if}}
+
+</body>
+</html>

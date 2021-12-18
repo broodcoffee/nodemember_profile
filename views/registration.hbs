@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <form action="/auth/register" method="post">
+        <h4>Input Your Profile Information</h4>
+        <label for="first_name">First Name: 
+            <input type="text" name="first_name" id="first_name" required>
+        </label> <br />
+        <label for="middle_name">Middle Name: 
+            <input type="text" name="middle_name" id="middle_name">
+        </label> <br />
+        <label for="last_name">Last Name: 
+            <input type="text" name="last_name" id="last_name" required>
+        </label> <br />
+        <label for="nickname">Nickname: 
+            <input type="text" name="nickname" id="nickname">
+        </label> <br />
+        <label for="email_address">Email: 
+            <input type="text" name="email_address" id="email_address" required>
+        </label> <br /> 
+        <h4>Input Your Log-in Information</h4>
+        <label for="username">Username: 
+            <input type="text" name="username" id="username">
+        </label> <br />
+        <label for="password">Password: 
+            <input type="password" name="password" id="password" required>
+        </label> <br />
+        <label for="password_conf">Confirm Password: 
+            <input type="password" name="password_conf" id="password_conf" required>
+        </label> <br />
+        <button type="submit">Submit</button>
+    </form>
+    
+    <br /><a href="/">Back to Login</a>
+
+    {{#if message}}
+        <h4>{{message}}</h4>
+    {{/if}}
+
+</body>
+</html>

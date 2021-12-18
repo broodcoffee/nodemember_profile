@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+</head>
+<body>
+    <h2>{{title}}</h2>
+    <table>
+        <thead>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Nickname</th>
+            <th>Email</th>
+            <th>Action</th>
+        </thead>
+
+        {{#each user}}
+            <tr>
+                <td>{{this.first_name}}</td>
+                <td>{{this.middle_name}}</td>
+                <td>{{this.last_name}}</td>
+                <td>{{this.nickname}}</td>
+                <td>{{this.email_address}}</td>
+                <td>
+                    <a href="/auth/updateform/{{this.email_address}}">Edit</a> &nbsp; 
+                    <a href="/auth/delete/{{this.email_address}}" onclick="return confirm('Are you sure you want to delete this record?')">Delete</a>
+                </td>
+            </tr>
+        {{/each}}
+    </table>
+
+    <br /><a href="/">Log Out</a>
+
+    {{#if message}}
+        <h4>{{message}}</h4>
+    {{/if}}
+
+</body>
+</html>
